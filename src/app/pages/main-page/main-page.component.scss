@@ -1,0 +1,29 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        .input {
+            width: 250px;
+            height: 30px;
+        }
+        .button {
+            width: 250px;
+            height: 30px;
+            border: none;
+            cursor: pointer;
+            &.primary {
+                background-color: rgba($color: #173f84, $alpha: 1.0);
+                color: white;
+            }
+        }
+    }
+}

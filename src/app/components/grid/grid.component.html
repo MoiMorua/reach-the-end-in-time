@@ -1,0 +1,9 @@
+<section>
+    <div class="row" *ngFor="let row of cells;let x = index">
+        <div class="cell" *ngFor="let cell of row; let y = index">
+            <button (click)="toggleCell([x,y])" [ngClass]="{'selected': isInFinalPath([x,y]),'warn':!reacheable}">                
+                {{cell.role}}
+            </button>
+        </div>
+    </div>
+</section>

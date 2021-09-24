@@ -1,0 +1,14 @@
+<section>
+    <form class="form" autocomplete="off" [formGroup]="form" (ngSubmit)="generateColumns()">
+        <input class="input" type="number" min="2" max="10" formControlName="columns" placeholder="Columns">
+        <label for="" *ngIf="form.get('columns').invalid && (form.get('columns').dirty || form.get('columns').touched)">Insert a valid number for columns (min: 2 , max: 10)</label>
+        <input class="input" type="number" min="2" max="10" formControlName="rows" placeholder="Rows">
+        <label for="" *ngIf="form.get('rows').invalid && (form.get('rows').dirty || form.get('rows').touched)">Insert a valid number for rows (min: 2 , max: 10)</label>
+        <input class="input" type="number" min="2" formControlName="maxsteps" placeholder="Max steps">
+        <label for="" *ngIf="form.get('maxsteps').invalid && (form.get('maxsteps').dirty || form.get('maxsteps').touched)">Insert a valid number for max steps (min: 2)</label>
+        <button class="button primary" type="submit">Generate cells</button>
+        <button class="button" (click)="check()" type="button">Can I reach the end?</button>
+    </form>
+    <app-grid [path]="path" [cells]="cells" [reacheable]="reacheable" (toggle)="toggleCell($event)"></app-grid>
+    <label *ngIf="checked">{{reacheable?'YES':'NO'}}</label>
+</section>
